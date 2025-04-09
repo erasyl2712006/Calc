@@ -31,7 +31,6 @@ function calculateNDS(rate) {
     let resultText = '';
   
     if (mode === 'with') {
-      // Сумма с НДС
       const withoutNDS = displayValue / (1 + rate / 100);
       const nds = displayValue - withoutNDS;
   
@@ -54,8 +53,6 @@ function calculateNDS(rate) {
   }
   
   
-
-// ===== Конвертация валют =====
 const API_KEY = '3af59e8f3866da00f4e31079';
 const fromCurrency = document.getElementById('fromCurrency');
 const toCurrency = document.getElementById('toCurrency');
@@ -76,7 +73,7 @@ async function loadCurrencies() {
     fromCurrency.value = 'USD';
     toCurrency.value = 'EUR';
   } catch {
-    alert('Ошибка при загрузке валют');
+    alert('Ошибка');
   }
 }
 
@@ -99,9 +96,8 @@ async function convertCurrency() {
     document.getElementById('conversionResult').innerText =
       `${amount} ${from} = ${converted.toFixed(2)} ${to}`;
   } catch {
-    alert("Ошибка при конвертации");
+    alert("Ошибка");
   }
 }
 
-// Загрузка валют при старте
 window.addEventListener('DOMContentLoaded', loadCurrencies);
