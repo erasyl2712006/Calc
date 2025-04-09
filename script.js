@@ -13,7 +13,7 @@ function calculate() {
     let expr = display.value.replace('%', '/100');
     display.value = eval(expr);
   } catch {
-    display.value = 'Ошибка';
+    display.value = 'Введите число';
   }
 }
 
